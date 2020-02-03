@@ -1,0 +1,136 @@
+
+1. find_by_primary_key_test():
+/usr/local/bin/python3.7 "/Users/chiqu/class2019fall/database/w4111-Databases-master 2/HW_Assignments/HW1_Template/tests/rdb_table_tests.py"
+Connection =  <pymysql.connections.Connection object at 0x10cb5f210>
+SQL =  select  nameLast,nameFirst,birthYear,birthState,birthMonth  from People  WHERE  playerID=%s  , args =  ['anthoer01']
+DEBUG:root:Executing SQL = select  nameLast,nameFirst,birthYear,birthState,birthMonth  from People  WHERE  playerID='anthoer01'
+[
+  {
+    "nameLast": "Anthony",
+    "nameFirst": "Eric",
+    "birthYear": "1967",
+    "birthState": "CA",
+    "birthMonth": "11"
+  }
+]
+
+Process finished with exit code 0
+
+
+2.find_by_template_test():
+/usr/local/bin/python3.7 "/Users/chiqu/class2019fall/database/w4111-Databases-master 2/HW_Assignments/HW1_Template/tests/rdb_table_tests.py"
+Connection =  <pymysql.connections.Connection object at 0x118abd350>
+SQL =  select  nameLast,nameFirst,birthYear,birthState,birthMonth,playerID  from People  WHERE  nameLast=%s AND birthState=%s AND birthMonth=%s  , args =  ['Anderson', 'CA', '9']
+DEBUG:root:Executing SQL = select  nameLast,nameFirst,birthYear,birthState,birthMonth,playerID  from People  WHERE  nameLast='Anderson' AND birthState='CA' AND birthMonth='9'
+[
+  {
+    "nameLast": "Anderson",
+    "nameFirst": "Cody",
+    "birthYear": "1990",
+    "birthState": "CA",
+    "birthMonth": "9",
+    "playerID": "anderco01"
+  },
+  {
+    "nameLast": "Anderson",
+    "nameFirst": "Lars",
+    "birthYear": "1987",
+    "birthState": "CA",
+    "birthMonth": "9",
+    "playerID": "anderla03"
+  }
+]
+
+Process finished with exit code 0
+
+
+
+3.delete_by_key_test():
+/usr/local/bin/python3.7 "/Users/chiqu/class2019fall/database/w4111-Databases-master 2/HW_Assignments/HW1_Template/tests/rdb_table_tests.py"
+Connection =  <pymysql.connections.Connection object at 0x112959310>
+DEBUG:root:Executing SQL = delete  from People  WHERE  playerID='billibr01'
+1
+('select  *  from People  WHERE  playerID=%s ', ['billibr01'])
+
+Process finished with exit code 0
+
+
+4.delete_by_template_test():
+/usr/local/bin/python3.7 "/Users/chiqu/class2019fall/database/w4111-Databases-master 2/HW_Assignments/HW1_Template/tests/rdb_table_tests.py"
+Connection =  <pymysql.connections.Connection object at 0x112f9b350>
+DEBUG:root:Executing SQL = delete  from People  WHERE  nameFirst='Bill' AND birthState='OH'
+40
+('select  *  from People  WHERE  nameFirst=%s AND birthState=%s ', ['Bill', 'OH'])
+#delete and find it, it's gone. Work sucessfully.
+
+Process finished with exit code 0
+
+
+5.update_by_template_test():
+/usr/local/bin/python3.7 "/Users/chiqu/class2019fall/database/w4111-Databases-master 2/HW_Assignments/HW1_Template/tests/rdb_table_tests.py"
+Connection =  <pymysql.connections.Connection object at 0x11aedb490>
+DEBUG:root:Executing SQL = update People set birthState='NY',birthCity='NewYork'  WHERE  birthYear='1862' AND deathYear='1930'
+(3, ())
+SQL =  select  nameLast,nameFirst,birthYear,birthState,birthMonth,playerID,birthCity,birthState  from People  WHERE  birthYear=%s AND deathYear=%s  , args =  ['1862', '1930']
+DEBUG:root:Executing SQL = select  nameLast,nameFirst,birthYear,birthState,birthMonth,playerID,birthCity,birthState  from People  WHERE  birthYear='1862' AND deathYear='1930'
+[
+  {
+    "nameLast": "Abbott",
+    "nameFirst": "Dan",
+    "birthYear": "1862",
+    "birthState": "NY",
+    "birthMonth": "3",
+    "playerID": "abbotda01",
+    "birthCity": "NewYork",
+    "People.birthState": "NY"
+  },
+  {
+    "nameLast": "Holland",
+    "nameFirst": "Will",
+    "birthYear": "1862",
+    "birthState": "NY",
+    "birthMonth": "",
+    "playerID": "hollawi01",
+    "birthCity": "NewYork",
+    "People.birthState": "NY"
+  },
+  {
+    "nameLast": "Schoeneck",
+    "nameFirst": "Jumbo",
+    "birthYear": "1862",
+    "birthState": "NY",
+    "birthMonth": "3",
+    "playerID": "schoeju01",
+    "birthCity": "NewYork",
+    "People.birthState": "NY"
+  }
+]
+# update and then find the template, it works successfully.
+
+Process finished with exit code 0
+
+
+
+6.insert_test():
+/usr/local/bin/python3.7 "/Users/chiqu/class2019fall/database/w4111-Databases-master 2/HW_Assignments/HW1_Template/tests/rdb_table_tests.py"
+Connection =  <pymysql.connections.Connection object at 0x1169cead0>
+DEBUG:root:Executing SQL = Insert ignore into People (playerID,birthYear,birthMonth,birthDay,birthCountry,birthState,birthCity,deathYear,deathMonth,deathDay,deathCountry,deathState,deathCity,nameFirst,nameLast,weight,height,bats,throws,debut,finalGame,retroID,bbrefID)  values ('dissjdj01','1990','6','12','USA','OH','Hamilton','1996','8','4','USA','NY','Chicago','Harry','Fin','200','70','R','R','1998-10-22','1996-01-03','djsux01','djsux01')
+SQL =  Insert ignore into People (playerID,birthYear,birthMonth,birthDay,birthCountry,birthState,birthCity,deathYear,deathMonth,deathDay,deathCountry,deathState,deathCity,nameFirst,nameLast,weight,height,bats,throws,debut,finalGame,retroID,bbrefID)  values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) , args =  ['dissjdj01', '1990', '6', '12', 'USA', 'OH', 'Hamilton', '1996', '8', '4', 'USA', 'NY', 'Chicago', 'Harry', 'Fin', '200', '70', 'R', 'R', '1998-10-22', '1996-01-03', 'djsux01', 'djsux01']
+(1, None)
+SQL =  select  nameLast,nameFirst,birthYear,birthState,birthMonth,playerID,birthCity,birthState  from People  WHERE  playerID=%s  , args =  ['dissjdj01']
+DEBUG:root:Executing SQL = select  nameLast,nameFirst,birthYear,birthState,birthMonth,playerID,birthCity,birthState  from People  WHERE  playerID='dissjdj01'
+[
+  {
+    "nameLast": "Fin",
+    "nameFirst": "Harry",
+    "birthYear": "1990",
+    "birthState": "OH",
+    "birthMonth": "6",
+    "playerID": "dissjdj01",
+    "birthCity": "Hamilton",
+    "People.birthState": "OH"
+  }
+]
+# insert and then find it. it works correctly.
+Process finished with exit code 0
+

@@ -1,0 +1,139 @@
+
+1. test_find_by_template():
+/usr/local/bin/python3.7 "/Users/chiqu/class2019fall/database/w4111-Databases-master 2/HW_Assignments/HW1_Template/tests/csv_table_tests.py"
+DEBUG:root:CSVDataTable.__init__: data = {
+  "table_name": "People",
+  "connect_info": {
+    "directory": "/Users/chiqu/class2019fall/database/w4111-Databases-master 2/HW_Assignments/HW1_Template/Data/Baseball",
+    "file_name": "People.csv"
+  },
+  "key_columns": [
+    "playerID"
+  ],
+  "debug": null
+}
+DEBUG:root:CSVDataTable._load: Loaded 19617 rows
+<class 'collections.OrderedDict'> <class 'dict'>
+<class 'collections.OrderedDict'> <class 'dict'>
+<class 'collections.OrderedDict'> <class 'dict'>
+<class 'collections.OrderedDict'> <class 'dict'>
+...
+[OrderedDict([('playerID', 'willite01'), ('birthYear', '1918'), ('birthMonth', '8'), ('birthDay', '30'), ('birthCountry', 'USA'), ('birthState', 'CA'), ('birthCity', 'San Diego'), ('deathYear', '2002'), ('deathMonth', '7'), ('deathDay', '5'), ('deathCountry', 'USA'), ('deathState', 'FL'), ('deathCity', 'Inverness'), ('nameFirst', 'Ted'), ('nameLast', 'Williams'), ('nameGiven', 'Theodore Samuel'), ('weight', '205'), ('height', '75'), ('bats', 'L'), ('throws', 'R'), ('debut', '1939-04-20'), ('finalGame', '1960-09-28'), ('retroID', 'willt103'), ('bbrefID', 'willite01')])]
+
+Process finished with exit code 0
+
+
+
+2. test_find_by_primarykey()
+/usr/local/bin/python3.7 "/Users/chiqu/class2019fall/database/w4111-Databases-master 2/HW_Assignments/HW1_Template/tests/csv_table_tests.py"
+DEBUG:root:CSVDataTable.__init__: data = {
+  "table_name": "People",
+  "connect_info": {
+    "directory": "/Users/chiqu/class2019fall/database/w4111-Databases-master 2/HW_Assignments/HW1_Template/Data/Baseball",
+    "file_name": "People.csv"
+  },
+  "key_columns": [
+    "playerID"
+  ],
+  "debug": null
+}
+DEBUG:root:CSVDataTable._load: Loaded 19617 rows
+<class 'collections.OrderedDict'> <class 'dict'>
+<class 'collections.OrderedDict'> <class 'dict'>
+<class 'collections.OrderedDict'> <class 'dict'>
+<class 'collections.OrderedDict'> <class 'dict'>
+[OrderedDict([('playerID', 'aasedo01'), ('birthYear', '1954'), ('birthMonth', '9'), ('birthDay', '8'), ('birthCountry', 'USA'), ('birthState', 'CA'), ('birthCity', 'Orange'), ('deathYear', ''), ('deathMonth', ''), ('deathDay', ''), ('deathCountry', ''), ('deathState', ''), ('deathCity', ''), ('nameFirst', 'Don'), ('nameLast', 'Aase'), ('nameGiven', 'Donald William'), ('weight', '190'), ('height', '75'), ('bats', 'R'), ('throws', 'R'), ('debut', '1977-07-26'), ('finalGame', '1990-10-03'), ('retroID', 'aased001'), ('bbrefID', 'aasedo01')])]
+
+Process finished with exit code 0
+
+
+3. test_delete_By_Key():
+/usr/local/bin/python3.7 "/Users/chiqu/class2019fall/database/w4111-Databases-master 2/HW_Assignments/HW1_Template/tests/csv_table_tests.py"
+DEBUG:root:CSVDataTable.__init__: data = {
+  "table_name": "People",
+  "connect_info": {
+    "directory": "/Users/chiqu/class2019fall/database/w4111-Databases-master 2/HW_Assignments/HW1_Template/Data/Baseball",
+    "file_name": "People.csv"
+  },
+  "key_columns": [
+    "birthDay"
+  ],
+  "debug": null
+}
+DEBUG:root:CSVDataTable._load: Loaded 19617 rows
+<class 'collections.OrderedDict'> <class 'dict'>
+<class 'collections.OrderedDict'> <class 'dict'>
+<class 'collections.OrderedDict'> <class 'dict'>
+<class 'collections.OrderedDict'> <class 'dict'>
+...
+623
+
+Process finished with exit code 0
+
+
+
+4. test_delelt_By_Tmp():
+/usr/local/bin/python3.7 "/Users/chiqu/class2019fall/database/w4111-Databases-master 2/HW_Assignments/HW1_Template/tests/csv_table_tests.py"
+DEBUG:root:CSVDataTable.__init__: data = {
+  "table_name": "People",
+  "connect_info": {
+    "directory": "/Users/chiqu/class2019fall/database/w4111-Databases-master 2/HW_Assignments/HW1_Template/Data/Baseball",
+    "file_name": "People.csv"
+  },
+  "key_columns": null,
+  "debug": null
+}
+DEBUG:root:CSVDataTable._load: Loaded 19617 rows
+<class 'collections.OrderedDict'> <class 'dict'>
+<class 'collections.OrderedDict'> <class 'dict'>
+<class 'collections.OrderedDict'> <class 'dict'>
+...
+2
+[]
+# delete_by_temp first and then find_by_temp
+Process finished with exit code 0
+
+
+
+
+5. test_update_by_tmp():
+/usr/local/bin/python3.7 "/Users/chiqu/class2019fall/database/w4111-Databases-master 2/HW_Assignments/HW1_Template/tests/csv_table_tests.py"
+DEBUG:root:CSVDataTable.__init__: data = {
+  "table_name": "People",
+  "connect_info": {
+    "directory": "/Users/chiqu/class2019fall/database/w4111-Databases-master 2/HW_Assignments/HW1_Template/Data/Baseball",
+    "file_name": "People.csv"
+  },
+  "key_columns": null,
+  "debug": null
+}
+<class 'collections.OrderedDict'> <class 'dict'>
+<class 'collections.OrderedDict'> <class 'dict'>
+...
+1
+[OrderedDict([('playerID', 'willite01'), ('birthYear', '1918'), ('birthMonth', '8'), ('birthDay', '30'), ('birthCountry', 'USA'), ('birthState', 'CA'), ('birthCity', 'Orange'), ('deathYear', '2002'), ('deathMonth', '7'), ('deathDay', '5'), ('deathCountry', 'USA'), ('deathState', 'FL'), ('deathCity', 'Inverness'), ('nameFirst', 'Ted'), ('nameLast', 'Williams'), ('nameGiven', 'Theodore Samuel'), ('weight', '205'), ('height', '75'), ('bats', 'L'), ('throws', 'R'), ('debut', '1939-04-20'), ('finalGame', '1960-09-28'), ('retroID', 'willt103'), ('bbrefID', 'willite01')])]
+# bitrhCity changed to Orange
+Process finished with exit code 0
+
+
+6. test_insertrecord():
+/usr/local/bin/python3.7 "/Users/chiqu/class2019fall/database/w4111-Databases-master 2/HW_Assignments/HW1_Template/tests/csv_table_tests.py"
+DEBUG:root:CSVDataTable.__init__: data = {
+  "table_name": "People",
+  "connect_info": {
+    "directory": "/Users/chiqu/class2019fall/database/w4111-Databases-master 2/HW_Assignments/HW1_Template/Data/Baseball",
+    "file_name": "People.csv"
+  },
+  "key_columns": null,
+  "debug": null
+}
+DEBUG:root:CSVDataTable._load: Loaded 19617 rows
+None
+<class 'collections.OrderedDict'> <class 'dict'>
+<class 'collections.OrderedDict'> <class 'dict'>
+...
+<class 'dict'> <class 'dict'>
+[{'nameLast': 'Sara', 'nameFirst': 'Ted'}]
+# insert a template first, and I find_by_template, it shows that I insert correctly.
+
+Process finished with exit code 0
