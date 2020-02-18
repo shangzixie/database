@@ -11,7 +11,7 @@ logger = logging.getLogger()
 def _get_default_connection():
     result = pymysql.connect(host='localhost',
                              user='dbuser',
-                             password='lichiqu123',
+                             password='dbuserdbuser',
                              db='lahman2019raw',
                              charset='utf8mb4',
                              cursorclass=pymysql.cursors.DictCursor)
